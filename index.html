@@ -128,6 +128,14 @@
           Puck.write('go("F");\n');
           console.log("FORWARD!");
          };
+        if(m.message == "SR"){
+          Puck.write('go("SR");\n');
+          console.log("SLIGHT RIGHT!");
+         };
+          if(m.message == "SL"){
+          Puck.write('go("SL");\n');
+          console.log("SLIGHT LEFT!");
+         };
     }});
 
 };</script>
