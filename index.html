@@ -96,7 +96,7 @@
 
   subInput.addEventListener('keypress', function (e) {
       (e.keyCode || e.charCode) === 13 && pubConn(subInput.value);
-      Puck.write('go("S");\n');
+      Puck.write('load();\n');
 
   });
 
