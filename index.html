@@ -79,7 +79,7 @@
 <script src="https://thecraftyrobot.github.io/smartibot_webpad/js/puck.js"></script>
 <input type="text" class="input-res" id="subInput" placeholder="Paste PubNub subscriber key here and press return">
 <div class="btn-groupV">
-  <button class="button" onclick="localDrive('B');" ><img height="50%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/up.svg"/></button>
+  <button class="button" onclick="Puck.write('go(B);\n');" ><img height="50%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/up.svg"/></button>
   </div>
   <div class="btn-groupH">
   <button class="button" onclick="Puck.write('go("L");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/left.svg"/></button>
@@ -100,9 +100,6 @@
 
   });
 
-  function localDrive(dir){
-    Puck.write('go('dir');\n');
-  };
 
   function pubConn(sub){
   
