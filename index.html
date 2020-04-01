@@ -101,6 +101,11 @@
 
 document.getElementById("upBtn").onclick = Puck.write('go("F");\n');;
 
+function goDrive(dir) { 
+          Puck.write('go('dir');\n');
+          console.log("DRIVING!");
+};
+  
   function pubConn(sub){
   
 
@@ -111,9 +116,10 @@ document.getElementById("upBtn").onclick = Puck.write('go("F");\n');;
   console.log("SUBSCRIBED");
   pubnub.addListener({message: function(m) {
           console.log(m.message);
+          goDrive(m.message);
           if(m.message == "F"){
-            Puck.write('go("B");\n');
-            console.log("BACKWARD!");
+            //Puck.write('go("B");\n');
+            //console.log("BACKWARD!");
         };
          if(m.message == "L"){
           Puck.write('go("L");\n');
