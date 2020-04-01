@@ -99,8 +99,16 @@
 
   });
 
-function goDrive(direction) {
-  Puck.write('go('direction');\n');
+document.getElementById("upBtn").onclick = function() {goDrive("F")};
+document.getElementById("downBtn").onclick = function() {goDrive("B")};
+document.getElementById("leftBtn").onclick = function() {goDrive("L")};
+document.getElementById("sleftBtn").onclick = function() {goDrive("SL")};
+document.getElementById("rightBtn").onclick = function() {goDrive("R")};
+document.getElementById("srightBtn").onclick = function() {goDrive("SR")}; 
+
+function goDrive(dir) {
+  Puck.write("go(\""+ dir + "\");\n");
+  console.log("go(\""+ dir + "\");\n");
 }
 
 
@@ -113,31 +121,8 @@ function goDrive(direction) {
   pubnub.subscribe({channels: [channel]}); // Subscribe to a channel.
   console.log("SUBSCRIBED");
   pubnub.addListener({message: function(m) {
-          console.log(m.message);
-          if(m.message == "F"){
-            Puck.write('go("B");\n');
-            console.log("BACKWARD!");
-        };
-         if(m.message == "L"){
-          Puck.write('go("L");\n');
-          console.log("LEFT!");
-         };
-         if(m.message == "R"){
-          Puck.write('go("R");\n');
-          console.log("RIGHT!");
-         };
-         if(m.message == "B"){
-          Puck.write('go("F");\n');
-          console.log("FORWARD!");
-         };
-        if(m.message == "SR"){
-          Puck.write('go("SR");\n');
-          console.log("SLIGHT RIGHT!");
-         };
-          if(m.message == "SL"){
-          Puck.write('go("SL");\n');
-          console.log("SLIGHT LEFT!");
-         };
+  goDrive(m.message);
+          
     }});
 
 };</script>
