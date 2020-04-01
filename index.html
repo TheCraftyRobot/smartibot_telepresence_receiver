@@ -81,10 +81,10 @@
   <button class="button" id="upBtn"><img height="50%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/up.svg"/></button>
   </div>
   <div class="btn-groupH">
-  <button class="button" onclick="Puck.write('go("L");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/left.svg"/></button>
-  <button class="button" onclick="Puck.write('go("SL");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/s_left.svg"/></button>
-    <button class="button" onclick="Puck.write('go("SR");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/s_right.svg"/></button>
-  <button class="button" onclick="Puck.write('go("R");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/right.svg"/></button>
+  <button class="button" id="leftBtn" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/left.svg"/></button>
+  <button class="button" id="sleftBtn" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/s_left.svg"/></button>
+    <button class="button" id="srightBtn" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/s_right.svg"/></button>
+  <button class="button" id="rightBtn" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/right.svg"/></button>
 </div>
 <div class="btn-groupV">
   <button class="button" onclick="Puck.write('go("F");\n');" ><img height="50%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/down.svg"/></button>
@@ -99,7 +99,12 @@
 
   });
 
-document.getElementById("upBtn").onclick = Puck.write('go("F");\n');;
+document.getElementById("upBtn").onclick = Puck.write('go("B");\n');;
+document.getElementById("downBtn").onclick = Puck.write('go("F");\n');;
+document.getElementById("leftBtn").onclick = Puck.write('go("L");\n');;
+document.getElementById("leftBtn").onclick = Puck.write('go("R");\n');;
+document.getElementById("sleftBtn").onclick = Puck.write('go("SL");\n');;
+document.getElementById("srightBtn").onclick = Puck.write('go("SR");\n');;
 
   function pubConn(sub){
   
