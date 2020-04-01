@@ -99,7 +99,12 @@
 
   });
 
-document.getElementById("upBtn").onclick = Puck.write('go("F");\n');;
+document.getElementById("upBtn").onclick = function(){upDrive()};
+  
+function upDrive() {
+            Puck.write('go("B");\n');
+            console.log("BACKWARD!");
+}
 
   function pubConn(sub){
   
