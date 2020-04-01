@@ -99,6 +99,8 @@
 
   });
 
+  
+  
 function goDrive(direction) {
   Puck.write('go('direction');\n');
 }
@@ -115,7 +117,7 @@ function goDrive(direction) {
   pubnub.addListener({message: function(m) {
           console.log(m.message);
           if(m.message == "F"){
-            goDrive(m.message);
+            Puck.write('go("B");\n');
             console.log("BACKWARD!");
         };
          if(m.message == "L"){
@@ -127,7 +129,7 @@ function goDrive(direction) {
           console.log("RIGHT!");
          };
          if(m.message == "B"){
-          goDrive(m.message);
+          Puck.write('go("F");\n');
           console.log("FORWARD!");
          };
         if(m.message == "SR"){
