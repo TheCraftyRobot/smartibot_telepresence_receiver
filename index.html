@@ -78,17 +78,16 @@
 <body>
 <script src="https://thecraftyrobot.github.io/smartibot_webpad/js/puck.js"></script>
 <input type="text" class="input-res" id="subInput" placeholder="Paste PubNub subscriber key here and press return">
-<div class="btn-groupV">
-  <button class="button" onclick="Puck.write('digitalWrite(D4, 0);\n analogWrite(D6, 0.65);\n digitalWrite(D11, 0);\n analogWrite(D10, 0.65);\n');" ><img height="50%" src="img/up.svg"/></button>
+ <button class="button" onclick="Puck.write('go("B");\n');" ><img height="50%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/up.svg"/></button>
   </div>
   <div class="btn-groupH">
-  <button class="button" onclick="Puck.write('digitalWrite(D4, 0);\n analogWrite(D6, 0.65);\n digitalWrite(D10, 0);\n analogWrite(D11, 0.65);\n');" ><img width="60%" src="img/left.svg"/></button>
-  <button class="button" onclick="Puck.write('digitalWrite(D6, 0);\n digitalWrite(D4, 0);\n digitalWrite(D10, 0);\n digitalWrite(D11, 0);\n');" ><img width="60%" src="img/stop.svg"/></button>
-  <button class="button" onclick="Puck.write('digitalWrite(D6, 0);\n analogWrite(D4, 0.65);\n digitalWrite(D11, 0);\n analogWrite(D10, 0.65);\n');" ><img width="60%" src="img/right.svg"/></button>
+  <button class="button" onclick="Puck.write('go("L");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/left.svg"/></button>
+  <button class="button" onclick="Puck.write('go("SL");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/s_left.svg"/></button>
+    <button class="button" onclick="Puck.write('go("SR");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/s_right.svg"/></button>
+  <button class="button" onclick="Puck.write('go("R");\n');" ><img width="60%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/right.svg"/></button>
 </div>
 <div class="btn-groupV">
-  <button class="button" onclick="Puck.write('digitalWrite(D6, 0);\n analogWrite(D4, 0.65);\n digitalWrite(D10, 0);\n analogWrite(D11, 0.65);\n');" ><img height="50%" src="img/down.svg"/></button>
-</div>
+  <button class="button" onclick="Puck.write('go("F");\n');" ><img height="50%" src="https://thecraftyrobot.github.io/smartibot_telepresence_controller/img/down.svg"/></button>
 
 
 <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.23.0.min.js"></script>
