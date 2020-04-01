@@ -99,11 +99,11 @@
 
   });
 
-document.getElementById("upBtn").onclick = function(){upDrive("B")};
+document.getElementById("upBtn").onclick = function(){upDrive()};
   
-function upDrive(dir) {
-            Puck.write('go('dir');\n');
-            console.log("MOVING!");
+function upDrive() {
+            Puck.write('go("B");\n');
+            console.log("BACKWARD!");
 }
 
   function pubConn(sub){
@@ -116,28 +116,28 @@ function upDrive(dir) {
   console.log("SUBSCRIBED");
   pubnub.addListener({message: function(m) {
           console.log(m.message);
-          //upDrive(m.message);
           if(m.message == "F"){
-          upDrive(m.message);
+            Puck.write('go("B");\n');
+            console.log("BACKWARD!");
         };
          if(m.message == "L"){
-          //Puck.write('go("L");\n');
+          Puck.write('go("L");\n');
           console.log("LEFT!");
          };
          if(m.message == "R"){
-          //Puck.write('go("R");\n');
+          Puck.write('go("R");\n');
           console.log("RIGHT!");
          };
          if(m.message == "B"){
-          //Puck.write('go("F");\n');
-          //console.log("FORWARD!");
+          Puck.write('go("F");\n');
+          console.log("FORWARD!");
          };
         if(m.message == "SR"){
-          //Puck.write('go("SR");\n');
+          Puck.write('go("SR");\n');
           console.log("SLIGHT RIGHT!");
          };
           if(m.message == "SL"){
-          //Puck.write('go("SL");\n');
+          Puck.write('go("SL");\n');
           console.log("SLIGHT LEFT!");
          };
     }});
