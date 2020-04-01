@@ -99,7 +99,7 @@
 
   });
 
-document.getElementById("upBtn").onclick = function(){upDrive("B")};
+document.getElementById("upBtn").onclick = function(){doDrive("B")};
   
 function upDrive(dir) {
             Puck.write('go('dir');\n');
@@ -116,29 +116,7 @@ function upDrive(dir) {
   console.log("SUBSCRIBED");
   pubnub.addListener({message: function(m) {
           console.log(m.message);
-          if(m.message == "F"){
-            upDrive(m.message);
-        };
-         if(m.message == "L"){
-          Puck.write('go("L");\n');
-          console.log("LEFT!");
-         };
-         if(m.message == "R"){
-          Puck.write('go("R");\n');
-          console.log("RIGHT!");
-         };
-         if(m.message == "B"){
-          //Puck.write('go("F");\n');
-          //console.log("FORWARD!");
-         };
-        if(m.message == "SR"){
-          Puck.write('go("SR");\n');
-          console.log("SLIGHT RIGHT!");
-         };
-          if(m.message == "SL"){
-          Puck.write('go("SL");\n');
-          console.log("SLIGHT LEFT!");
-         };
+            doDrive(m.message);
     }});
 
 };</script>
