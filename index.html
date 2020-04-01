@@ -1,4 +1,5 @@
 <html>
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -99,7 +100,7 @@
 
   });
 
-document.getElementById("upBtn").onclick = function(){doDrive("B")};
+document.getElementById("upBtn").onclick = function(){upDrive("B")};
   
 function upDrive(dir) {
             Puck.write('go('dir');\n');
@@ -110,13 +111,14 @@ function upDrive(dir) {
   
 
 
-  var pubnub = new PubNub({ subscribeKey : sub}); // Your PubNub keys here. Get them from https://dashboard.pubnub.com.
+  var pubnub = new PubNub({ subscribeKey : sub});
   var channel = 'drive';
-  pubnub.subscribe({channels: [channel]}); // Subscribe to a channel.
+  pubnub.subscribe({channels: [channel]});
   console.log("SUBSCRIBED");
   pubnub.addListener({message: function(m) {
           console.log(m.message);
-            doDrive(m.message);
+          upDrive(m.message);
+      
     }});
 
 };</script>
