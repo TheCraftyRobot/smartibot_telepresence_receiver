@@ -116,9 +116,9 @@ function upDrive(dir) {
   console.log("SUBSCRIBED");
   pubnub.addListener({message: function(m) {
           console.log(m.message);
-          upDrive(m.message);
+          //upDrive(m.message);
           if(m.message == "F"){
-            //upDrive(m.message);
+          upDrive(m.message);
         };
          if(m.message == "L"){
           //Puck.write('go("L");\n');
