@@ -99,7 +99,9 @@
 
   });
 
-//document.getElementById("upBtn").onclick = Puck.write('go("B");\n');;
+function goDrive(direction) {
+  Puck.write('go('direction');\n');
+}
 
 
   function pubConn(sub){
