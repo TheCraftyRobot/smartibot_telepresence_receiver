@@ -1,5 +1,4 @@
 <html>
-<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -111,16 +110,37 @@ function upDrive(dir) {
   
 
 
-  var pubnub = new PubNub({ subscribeKey : sub});
+  var pubnub = new PubNub({ subscribeKey : sub}); // Your PubNub keys here. Get them from https://dashboard.pubnub.com.
   var channel = 'drive';
-  pubnub.subscribe({channels: [channel]});
+  pubnub.subscribe({channels: [channel]}); // Subscribe to a channel.
   console.log("SUBSCRIBED");
   pubnub.addListener({message: function(m) {
           console.log(m.message);
           upDrive(m.message);
-      
-    };
-                     }});
+          if(m.message == "F"){
+            //upDrive(m.message);
+        };
+         if(m.message == "L"){
+          //Puck.write('go("L");\n');
+          console.log("LEFT!");
+         };
+         if(m.message == "R"){
+          //Puck.write('go("R");\n');
+          console.log("RIGHT!");
+         };
+         if(m.message == "B"){
+          //Puck.write('go("F");\n');
+          //console.log("FORWARD!");
+         };
+        if(m.message == "SR"){
+          //Puck.write('go("SR");\n');
+          console.log("SLIGHT RIGHT!");
+         };
+          if(m.message == "SL"){
+          //Puck.write('go("SL");\n');
+          console.log("SLIGHT LEFT!");
+         };
+    }});
 
 };</script>
 
