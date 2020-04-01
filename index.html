@@ -99,11 +99,11 @@
 
   });
 
-document.getElementById("upBtn").onclick = function(){upDrive()};
+document.getElementById("upBtn").onclick = function(){upDrive("B")};
   
-function upDrive() {
-            Puck.write('go("B");\n');
-            console.log("BACKWARD!");
+function upDrive(dir) {
+            Puck.write('go('dir');\n');
+            console.log("MOVING!");
 }
 
   function pubConn(sub){
@@ -117,8 +117,7 @@ function upDrive() {
   pubnub.addListener({message: function(m) {
           console.log(m.message);
           if(m.message == "F"){
-            Puck.write('go("B");\n');
-            console.log("BACKWARD!");
+            upDrive(m.message);
         };
          if(m.message == "L"){
           Puck.write('go("L");\n');
@@ -129,8 +128,8 @@ function upDrive() {
           console.log("RIGHT!");
          };
          if(m.message == "B"){
-          Puck.write('go("F");\n');
-          console.log("FORWARD!");
+          //Puck.write('go("F");\n');
+          //console.log("FORWARD!");
          };
         if(m.message == "SR"){
           Puck.write('go("SR");\n');
